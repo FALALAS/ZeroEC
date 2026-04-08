@@ -1,4 +1,4 @@
-# ZeroDEC
+# ZeroEC
 
 ## Introduction
 
