@@ -1,0 +1,13 @@
+torch==2.0.1
+torchvision==0.15.2
+accelerate>=0.25.0
+diffusers==0.25.0
+transformers==4.28.1
+peft==0.9.0
+lpips==0.1.4
+pytorch-msssim==1.0.0
+Pillow>=9.5.0
+tqdm
+tensorboard
+vision_aided_loss==0.1.0
+xformers==0.0.20
