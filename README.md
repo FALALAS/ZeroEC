@@ -55,54 +55,8 @@ cd CoTF
 pip install -r requirements.txt
 ```
 
-`vision_aided_loss` is required by both training pipelines for the CLIP-guided discriminator. If it is unavailable from your package index, install it from the upstream project used by your environment.
-
-## Training
-
-### OSEDiff
-
-Prepare a dataset root containing `gt/` images and `tag/` prompt files. See `OSEDiff/README.md` for the exact layout.
-
-```bash
-cd OSEDiff
-accelerate launch train_osediff_ganp.py \
-  --root_folders /path/to/dataset_root \
-  --pretrained_model_name_or_path /path/to/stable-diffusion-2-1-base \
-  --output_dir outputs/osediff_ganp
-```
-
-### CoTF
-
-Edit `CoTF/options/train/train_msec.yml` to point to your natural-image training folder, then run:
-
-```bash
-cd CoTF
-python train.py -opt options/train/train_msec.yml
-```
-
-The CoTF config exposes `noise_std`. Keep it at `0.0` for cleaner MSEC/SICEV2-style settings, and set a positive value for noisier low-light settings such as LOL v1.
-
-## Method Alignment
-
-The released code follows the paper's main training logic:
-
-- Exposure offset is sampled continuously from `[-2, 2]`.
-- Camera response parameters are sampled as `gamma ~ N(0.9, 0.1)` and `beta ~ N(0.6, 0.1)`.
-- For positive exposure, the degraded input is `C(I, e, beta, gamma)` and the opposite-exposure target is `1 - C(1 - I, e, beta, gamma)`.
-- For negative exposure, the degraded input is `1 - C(1 - I, |e|, beta, gamma)` and the opposite-exposure target is `C(I, |e|, beta, gamma)`.
-- The prediction is re-degraded with the opposite exposure and supervised by the hallucination consistency discriminator.
-
 ## Release Notes
 
 This repository intentionally excludes datasets, pretrained weights, checkpoints, logs, cached files, and archived experiment outputs. Download datasets and pretrained models separately.
 
-## Citation
-
-```bibtex
-@article{li2026zeroec,
-  title={ZeroEC: A Zero-Reference Framework for Robust Exposure Correction via Hallucination Consistency Learning},
-  author={Li, Ao and Wang, Zhenyu and Feng, Mingtao and Huang, Tao and Zhu, Yufan and Feng, Yuxin and Wu, Fangfang and Dong, Weisheng},
-  journal={arXiv preprint},
-  year={2026}
-}
 ```
