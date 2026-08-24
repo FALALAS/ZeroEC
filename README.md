@@ -33,7 +33,7 @@ Each subfolder has its own `README.md` and `requirements.txt`.
 ZeroEC trains on ordinary natural images, such as Flickr2K or MS COCO, rather than exposure-specific datasets. Evaluation in the paper uses:
 
 - MSEC: https://github.com/mahmoudnafifi/Exposure_Correction
-- SICEV2
+- SICEV2: https://share.weiyun.com/C2aJ1Cti
 - LOL v1
 
 Datasets are not included in this repository. Download them separately and update the option files or command-line paths locally.
@@ -54,10 +54,4 @@ pip install -r requirements.txt
 ```bash
 cd CoTF
 pip install -r requirements.txt
-```
-
-## Release Notes
-
-This repository intentionally excludes datasets, pretrained weights, checkpoints, logs, cached files, and archived experiment outputs. Download datasets and pretrained models separately.
-
 ```
