@@ -4,11 +4,12 @@ Official implementation of **ZeroEC: A Zero-Reference Framework for Robust Expos
 
 Paper link will be added when available.
 
-Ao Li<sup>1</sup>, Zhenyu Wang<sup>2,*</sup>, Mingtao Feng<sup>1</sup>, Tao Huang<sup>2</sup>, Yufan Zhu<sup>1</sup>, Yuxin Feng<sup>2</sup>, Fangfang Wu<sup>3</sup>, Weisheng Dong<sup>1</sup>
+[Ao Li](https://liaosite.github.io/)<sup>1</sup>, Jinqiang Yao<sup>4</sup>, Zhenyu Wang<sup>2,*</sup>, Tao Huang<sup>2</sup>, Yufan Zhu<sup>1</sup>, Fangfang Wu<sup>3</sup>, Weisheng Dong<sup>1,*</sup>
 
 <sup>1</sup>School of Artificial Intelligence, Xidian University  
 <sup>2</sup>Hangzhou Institute of Technology, Xidian University  
 <sup>3</sup>School of Computer Science and Technology, Xidian University  
+<sup>4</sup>CICO Research Global Co., Ltd., Hangzhou, China<br>
 <sup>*</sup>Corresponding author
 
 ## Overview
